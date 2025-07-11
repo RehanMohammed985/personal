@@ -33,7 +33,7 @@ export default function Projects() {
     {
       title: "Neural Architecture Search Engine",
       subtitle: "Automated Deep Learning Model Discovery",
-      description: "Developed an automated system for discovering optimal neural network architectures using reinforcement learning and evolutionary algorithms. Reduces manual hyperparameter tuning by 80%.",
+      description: "Developed an automated system for discovering optimal neural network architectures using reinforcement learning and evolutionary algorithms. Reduces manual hyperparameter tuning by 67%.",
       technologies: ["Python", "TensorFlow", "Reinforcement Learning", "Evolutionary Algorithms", "AutoML"],
       icon: Cpu,
       category: "AI/ML"
@@ -41,7 +41,7 @@ export default function Projects() {
     {
       title: "Real-time Emotion Recognition System",
       subtitle: "Multi-modal Affective Computing",
-      description: "Built a real-time emotion recognition system that processes facial expressions, voice tone, and physiological signals to accurately predict emotional states with 94% accuracy.",
+      description: "Built a real-time emotion recognition system that processes facial expressions, voice tone, and physiological signals to accurately predict emotional states with 71% accuracy.",
       technologies: ["Python", "OpenCV", "TensorFlow", "Signal Processing", "Computer Vision"],
       icon: Brain,
       category: "AI/ML"
