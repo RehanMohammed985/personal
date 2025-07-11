@@ -9,7 +9,7 @@ export default function About() {
     {
       school: "NC State University",
       degree: "Bachelor of Science in Computer Science",
-      details: "Rising Sophomore • Honors CS Student • Merit School of Engineering Scholar ($5k annual)",
+      details: "Rising Sophomore • Honors CS Student • Merit School of Engineering Scholar",
       year: "2024 - Present",
       icon: GraduationCap
     },
