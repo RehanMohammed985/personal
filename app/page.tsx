@@ -3,17 +3,33 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Brain, Code, Zap, Globe, Music, Github, Linkedin, Twitter } from 'lucide-react'
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 
 export default function Home() {
+  const [currentlyListening, setCurrentlyListening] = useState({
+    song: "Coffee",
+    artist: "Miguel"
+  })
+
+  useEffect(() => {
+    // Fetch currently listening data from JSON file
+    fetch('/currently-listening.json')
+      .then(res => res.json())
+      .then(data => {
+        setCurrentlyListening({
+          song: data.song,
+          artist: data.artist
+        })
+      })
+      .catch(err => {
+        console.log('Could not fetch currently listening data, using default')
+      })
+  }, [])
+
   const currentActivity = {
     title: "Exploring Cognitive Science & Human Thinking",
     description: "Starting a new project exploring how cognitive architectures can enhance AI reasoning. I'll be diving into how models like ACT-R and SOAR can be integrated with neural networks to simulate human-like decision-making, memory, and problem-solving. The goal is to build a hybrid system that combines symbolic and sub-symbolic processing.",
     icon: Brain
-  }
-
-  const currentlyListening = {
-    song: "Coffee",
-    artist: "Miguel"
   }
 
   const socialLinks = [
