@@ -16,6 +16,11 @@ export const metadata: Metadata = {
   keywords: ['AI', 'Machine Learning', 'Computer Science', 'NC State', 'Research', 'Portfolio'],
   authors: [{ name: 'Rehan Mohammed' }],
   creator: 'Rehan Mohammed',
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
   openGraph: {
     title: 'Rehan Mohammed - AI Researcher & CS Student',
     description: 'Personal portfolio of Rehan Mohammed, a rising sophomore CS student at NC State University, AI researcher, and tech enthusiast.',
