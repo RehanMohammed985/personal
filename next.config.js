@@ -2,7 +2,7 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  basePath: '/personal',
+  basePath: '', // Removed '/personal' for root domain
   images: {
     unoptimized: true,
   },
