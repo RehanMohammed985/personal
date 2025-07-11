@@ -39,7 +39,7 @@ export default function Home() {
       {/* Navigation Buttons */}
       <div>
         {/* Mobile Nav Bar */}
-        <div className="sm:hidden fixed top-0 left-0 w-full z-50 bg-black/80 px-2 py-2 flex overflow-x-auto space-x-3 border-b border-gray-800" style={{ WebkitOverflowScrolling: 'touch' }}>
+        <div className="sm:hidden fixed top-0 left-0 w-full z-50 bg-black/80 px-2 py-2 flex overflow-x-auto space-x-3" style={{ WebkitOverflowScrolling: 'touch' }}>
           <Link href="/">
             <button className="text-white text-xs px-3 py-1 rounded hover:bg-gray-800 transition">Home</button>
           </Link>
@@ -111,9 +111,9 @@ export default function Home() {
       </div>
 
       {/* Add top padding for mobile nav bar */}
-      <div className="pt-14 sm:pt-0">
+      <div className="pt-8 sm:pt-0">
         {/* Hero Section */}
-        <section className="flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-32 pt-24 sm:pt-20">
+        <section className="flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-32 pt-8 sm:pt-20">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
