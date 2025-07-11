@@ -44,11 +44,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-32.png" />
-        <link rel="shortcut icon" href="/favicon-32.png" />
-        <link rel="apple-touch-icon" href="/favicon-32.png" />
-        <meta name="msapplication-TileImage" content="/favicon-32.png" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
       </head>
       <body className={`${inter.className} bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 min-h-screen`}>
         {children}
