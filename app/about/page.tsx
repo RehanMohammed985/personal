@@ -10,14 +10,14 @@ export default function About() {
       school: "NC State University",
       degree: "Bachelor of Science in Computer Science",
       details: "Rising Sophomore • Honors CS Student • Merit School of Engineering Scholar ($5k annual)",
-      year: "2023 - Present",
+      year: "2024 - Present",
       icon: GraduationCap
     },
     {
       school: "NCSSM (North Carolina School of Science and Mathematics)",
       degree: "High School Diploma",
       details: "#1 Public School in USA • Pre-Calculus Teaching Assistant",
-      year: "2021 - 2023",
+      year: "2022 - 2024",
       icon: GraduationCap
     }
   ]
@@ -40,7 +40,7 @@ export default function About() {
     },
     {
       title: "Tech & Research",
-      description: "Love exploring cutting-edge technologies and contributing to research projects",
+      description: "Love exploring new technologies and contributing to research projects",
       icon: Users
     }
   ]
