@@ -11,7 +11,7 @@ export default function Experience() {
       company: "Cohere Labs",
       location: "Remote",
       period: "June 2025 - Present",
-      description: "Conducting cutting-edge research in natural language processing and large language models. Working on improving model performance and developing new AI applications.",
+      description: "Working on developing models and dynamic role assignment and efficient communication through graph-based protocols. Working with MARL (Multi Agent Reinforcement Learning)",
       skills: ["AI Research", "NLP", "LLMs", "Python", "Machine Learning"],
       icon: Brain,
       link: "#"
@@ -21,7 +21,7 @@ export default function Experience() {
       company: "The VONG Movement",
       location: "Remote",
       period: "June 2024 - July 2024",
-      description: "Researching emerging technologies and their applications in social impact. Contributing to innovative solutions that address real-world challenges.",
+      description: "Researching predictive models and creating trends. Used for weather prediction and pollution management",
       skills: ["Technology Research", "Social Impact", "Innovation", "Project Management"],
       icon: Zap,
       link: "#"
@@ -41,7 +41,7 @@ export default function Experience() {
       company: "Lenovo Innovation Program",
       location: "Raleigh, NC",
       period: "July 2023 - July 2023",
-      description: "Participated in Lenovo's innovation program, working on cutting-edge technology projects and contributing to research initiatives in computer science and AI.",
+      description: "Researched and built applications for Lead Poisoning Awareness.",
       skills: ["Research", "Innovation", "Technology", "Collaboration"],
       icon: Building,
       link: "#"
@@ -51,7 +51,7 @@ export default function Experience() {
       company: "NCSSM",
       location: "Durham, NC",
       period: "June 2023 - July 2023",
-      description: "Conducted research on large language models for scientific applications. Developed and tested models for processing scientific literature and research papers.",
+      description: "Conducted research on large language models for scientific applications. Fine tuned models with multiple prompt engineering techniques to analyze efficiency.",
       skills: ["LLMs", "Scientific Research", "Python", "Machine Learning", "NLP"],
       icon: Brain,
       link: "#"
@@ -61,7 +61,7 @@ export default function Experience() {
       company: "Algoverse",
       location: "Remote",
       period: "May 2025 - Present",
-      description: "Researched and developed machine learning algorithms and AI solutions. Contributed to various projects involving computer vision, natural language processing, and predictive modeling.",
+      description: "Building a fake news detection system combining BERT-based text classification with graph-based source credibility modeling to identify and flag misinformation with higher accuracy.",
       skills: ["Machine Learning", "AI", "Computer Vision", "NLP", "Python", "TensorFlow"],
       icon: Brain,
       link: "#"
