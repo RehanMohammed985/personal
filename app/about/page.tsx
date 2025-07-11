@@ -227,7 +227,7 @@ export default function About() {
                 </div>
                 <div>
                   <h3 className="text-base sm:text-lg font-semibold text-gray-300 mb-2">Scholarship</h3>
-                  <p className="text-gray-400 text-sm sm:text-base">Merit School of Engineering Scholar ($5k annual)</p>
+                  <p className="text-gray-400 text-sm sm:text-base">Merit School of Engineering Scholar</p>
                 </div>
               </div>
             </motion.div>
