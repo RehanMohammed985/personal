@@ -89,18 +89,18 @@ export default function Experience() {
   return (
     <div className="min-h-screen bg-black">
       {/* Navigation Buttons */}
-      <div className="fixed top-8 left-1/2 transform -translate-x-1/2 z-50">
+      <div className="fixed top-4 sm:top-8 left-1/2 transform -translate-x-1/2 z-50">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex space-x-8"
+          className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-8"
         >
           <Link href="/">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-white hover:text-gray-300 font-medium transition-colors duration-200 relative group"
+              className="text-white hover:text-gray-300 font-medium transition-colors duration-200 relative group text-sm sm:text-base"
             >
               Home
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full"></div>
@@ -110,7 +110,7 @@ export default function Experience() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-white hover:text-gray-300 font-medium transition-colors duration-200 relative group"
+              className="text-white hover:text-gray-300 font-medium transition-colors duration-200 relative group text-sm sm:text-base"
             >
               About
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full"></div>
@@ -120,7 +120,7 @@ export default function Experience() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-white hover:text-gray-300 font-medium transition-colors duration-200 relative group"
+              className="text-white hover:text-gray-300 font-medium transition-colors duration-200 relative group text-sm sm:text-base"
             >
               Projects
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full"></div>
@@ -130,7 +130,7 @@ export default function Experience() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-white hover:text-gray-300 font-medium transition-colors duration-200 relative group"
+              className="text-white hover:text-gray-300 font-medium transition-colors duration-200 relative group text-sm sm:text-base"
             >
               Experience
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full"></div>
@@ -140,7 +140,7 @@ export default function Experience() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-white hover:text-gray-300 font-medium transition-colors duration-200 relative group"
+              className="text-white hover:text-gray-300 font-medium transition-colors duration-200 relative group text-sm sm:text-base"
             >
               Contact
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full"></div>
@@ -149,8 +149,8 @@ export default function Experience() {
         </motion.div>
       </div>
 
-      {/* Social Links - Left Side */}
-      <div className="fixed left-8 top-1/2 transform -translate-y-1/2 z-40">
+      {/* Social Links - Left Side (Hidden on mobile) */}
+      <div className="hidden sm:block fixed left-8 top-1/2 transform -translate-y-1/2 z-40">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -175,18 +175,18 @@ export default function Experience() {
         </motion.div>
       </div>
       {/* Hero Section */}
-      <section className="pt-32 pb-24 px-6 sm:px-12 lg:px-32">
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-32">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-20"
+            className="text-center mb-12 sm:mb-20"
           >
-            <h1 className="text-6xl sm:text-7xl font-bold mb-8 text-white">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 text-white">
               Experience
             </h1>
-            <p className="text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
               My research and professional experience across various organizations, focusing on AI, machine learning, and technology innovation.
             </p>
           </motion.div>
@@ -195,109 +195,54 @@ export default function Experience() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-8"
+            className="space-y-6 sm:space-y-8"
           >
             {experiences.map((exp, index) => (
               <motion.div
-                key={`${exp.company}-${exp.title}`}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                key={exp.title}
+                initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                className="bg-gray-900 rounded-2xl p-10 border border-gray-800"
+                className="bg-gray-900 rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-gray-800 hover:border-gray-700 transition-all duration-200"
               >
-                <div className="flex items-start space-x-8">
+                <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6">
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center">
-                      <exp.icon className="w-8 h-8 text-black" />
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-xl flex items-center justify-center">
+                      <exp.icon className="w-6 h-6 sm:w-8 sm:h-8 text-black" />
                     </div>
                   </div>
                   <div className="flex-1">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
-                      <div>
-                        <h3 className="text-3xl font-bold text-white mb-2">{exp.title}</h3>
-                        <h4 className="text-2xl font-semibold text-gray-300 mb-1">{exp.company}</h4>
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
+                      <h3 className="text-lg sm:text-xl font-semibold text-white">{exp.title}</h3>
+                      <span className="text-sm sm:text-base text-gray-400 mt-1 sm:mt-0">{exp.period}</span>
+                    </div>
+                    <div className="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-4 mb-3">
+                      <div className="flex items-center space-x-2">
+                        <Building className="w-4 h-4 text-gray-400" />
+                        <span className="text-sm sm:text-base text-gray-300">{exp.company}</span>
                       </div>
-                      <div className="flex items-center space-x-6 text-lg text-gray-400 mt-4 sm:mt-0">
-                        <div className="flex items-center space-x-2">
-                          <Calendar className="w-5 h-5" />
-                          <span>{exp.period}</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <MapPin className="w-5 h-5" />
-                          <span>{exp.location}</span>
-                        </div>
+                      <div className="flex items-center space-x-2">
+                        <MapPin className="w-4 h-4 text-gray-400" />
+                        <span className="text-sm sm:text-base text-gray-300">{exp.location}</span>
                       </div>
                     </div>
-                    <p className="text-gray-400 mb-8 leading-relaxed text-lg">
+                    <p className="text-sm sm:text-base text-gray-400 mb-4 leading-relaxed">
                       {exp.description}
                     </p>
-                    <div className="flex flex-wrap gap-3 mb-4">
-                      {exp.skills.map((skill) => (
+                    <div className="flex flex-wrap gap-2">
+                      {exp.skills.map((skill, skillIndex) => (
                         <span
-                          key={skill}
-                          className="text-sm bg-gray-800 text-gray-300 px-4 py-2 rounded-full border border-gray-700"
+                          key={skillIndex}
+                          className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded-full"
                         >
                           {skill}
                         </span>
                       ))}
                     </div>
-                    {exp.link && (
-                      <a
-                        href={exp.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"
-                      >
-                        <span>Learn More</span>
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    )}
                   </div>
                 </div>
               </motion.div>
             ))}
-          </motion.div>
-          {/* Summary Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-32"
-          >
-            <div className="bg-gray-900 rounded-2xl p-12 border border-gray-800">
-              <h3 className="text-3xl font-bold text-white mb-12 text-center">
-                Research Focus Areas
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-6">
-                    <Brain className="w-8 h-8 text-black" />
-                  </div>
-                  <h4 className="text-xl font-semibold text-white mb-4">AI & Machine Learning</h4>
-                  <p className="text-gray-400 text-lg leading-relaxed">
-                    Specialized in large language models, neural networks, and cognitive architectures
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-6">
-                    <Users className="w-8 h-8 text-black" />
-                  </div>
-                  <h4 className="text-xl font-semibold text-white mb-4">Research & Innovation</h4>
-                  <p className="text-gray-400 text-lg leading-relaxed">
-                    Experience in academic and industry research with focus on practical applications
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-6">
-                    <Zap className="w-8 h-8 text-black" />
-                  </div>
-                  <h4 className="text-xl font-semibold text-white mb-4">Technology Leadership</h4>
-                  <p className="text-gray-400 text-lg leading-relaxed">
-                    Leading projects and mentoring others in cutting-edge technology development
-                  </p>
-                </div>
-              </div>
-            </div>
           </motion.div>
         </div>
       </section>

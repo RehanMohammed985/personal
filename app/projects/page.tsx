@@ -79,18 +79,18 @@ export default function Projects() {
   return (
     <div className="min-h-screen bg-black">
       {/* Navigation Buttons */}
-      <div className="fixed top-8 left-1/2 transform -translate-x-1/2 z-50">
+      <div className="fixed top-4 sm:top-8 left-1/2 transform -translate-x-1/2 z-50">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex space-x-8"
+          className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-8"
         >
           <Link href="/">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-white hover:text-gray-300 font-medium transition-colors duration-200 relative group"
+              className="text-white hover:text-gray-300 font-medium transition-colors duration-200 relative group text-sm sm:text-base"
             >
               Home
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full"></div>
@@ -100,7 +100,7 @@ export default function Projects() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-white hover:text-gray-300 font-medium transition-colors duration-200 relative group"
+              className="text-white hover:text-gray-300 font-medium transition-colors duration-200 relative group text-sm sm:text-base"
             >
               About
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full"></div>
@@ -110,7 +110,7 @@ export default function Projects() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-white hover:text-gray-300 font-medium transition-colors duration-200 relative group"
+              className="text-white hover:text-gray-300 font-medium transition-colors duration-200 relative group text-sm sm:text-base"
             >
               Projects
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full"></div>
@@ -120,7 +120,7 @@ export default function Projects() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-white hover:text-gray-300 font-medium transition-colors duration-200 relative group"
+              className="text-white hover:text-gray-300 font-medium transition-colors duration-200 relative group text-sm sm:text-base"
             >
               Experience
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full"></div>
@@ -130,7 +130,7 @@ export default function Projects() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-white hover:text-gray-300 font-medium transition-colors duration-200 relative group"
+              className="text-white hover:text-gray-300 font-medium transition-colors duration-200 relative group text-sm sm:text-base"
             >
               Contact
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full"></div>
@@ -139,8 +139,8 @@ export default function Projects() {
         </motion.div>
       </div>
 
-      {/* Social Links - Left Side */}
-      <div className="fixed left-8 top-1/2 transform -translate-y-1/2 z-40">
+      {/* Social Links - Left Side (Hidden on mobile) */}
+      <div className="hidden sm:block fixed left-8 top-1/2 transform -translate-y-1/2 z-40">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -166,18 +166,18 @@ export default function Projects() {
       </div>
       
       {/* Hero Section */}
-      <section className="pt-32 pb-24 px-6 sm:px-12 lg:px-32">
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-32">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
-            <h1 className="text-6xl sm:text-7xl font-bold mb-8 text-white">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 text-white">
               Projects
             </h1>
-            <p className="text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
               A collection of my technical projects, research work, and innovative solutions in AI, machine learning, and software development.
             </p>
           </motion.div>
@@ -187,7 +187,7 @@ export default function Projects() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8"
           >
             {projects.map((project, index) => (
               <motion.div
@@ -196,39 +196,45 @@ export default function Projects() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                 whileHover={{ scale: 1.02, y: -5 }}
-                className="bg-gray-900 rounded-2xl p-8 cursor-pointer group border border-gray-800 hover:border-gray-700 transition-all duration-200"
+                className="bg-gray-900 rounded-xl sm:rounded-2xl p-6 sm:p-8 cursor-pointer group border border-gray-800 hover:border-gray-700 transition-all duration-200"
               >
-                <div className="flex items-start space-x-6 mb-6">
+                <div className="flex items-start space-x-4 sm:space-x-6 mb-4 sm:mb-6">
                   <div className="flex-shrink-0">
-                    <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center">
-                      <project.icon className="w-7 h-7 text-black" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-xl flex items-center justify-center">
+                      <project.icon className="w-5 h-5 sm:w-6 sm:h-6 text-black" />
                     </div>
                   </div>
                   <div className="flex-1">
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-sm font-semibold text-gray-300 bg-gray-800 px-3 py-1 rounded-full border border-gray-700">
-                        {project.category}
-                      </span>
-                      <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
+                    <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">{project.title}</h3>
+                    <p className="text-sm sm:text-base text-gray-400 mb-3">{project.subtitle}</p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded-full">{project.category}</span>
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
-                    <h4 className="text-lg font-semibold text-gray-300 mb-3">{project.subtitle}</h4>
                   </div>
                 </div>
-                
-                <p className="text-gray-400 mb-6 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-400 mb-4 sm:mb-6 leading-relaxed">
                   {project.description}
                 </p>
-                
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
+                <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
+                  {project.technologies.map((tech, techIndex) => (
                     <span
-                      key={tech}
-                      className="text-xs bg-gray-800 text-gray-300 px-3 py-1 rounded-full border border-gray-700"
+                      key={techIndex}
+                      className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded-full"
                     >
                       {tech}
                     </span>
                   ))}
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex space-x-2">
+                    <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <ExternalLink className="w-4 h-4 text-black" />
+                    </div>
+                    <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Github className="w-4 h-4 text-black" />
+                    </div>
+                  </div>
+                  <Zap className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
                 </div>
               </motion.div>
             ))}
