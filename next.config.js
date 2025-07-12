@@ -2,7 +2,7 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  basePath: '/personal', // Back to GitHub Pages subdirectory
+  basePath: '', // For root domain hosting on rehan.world
   images: {
     unoptimized: true,
   },

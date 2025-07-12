@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Rehan Mohammed - AI Researcher & CS Student',
     description: 'Personal portfolio of Rehan Mohammed, a rising sophomore CS student at NC State University, AI researcher, and tech enthusiast.',
-    url: 'https://rehanmohammed985.github.io/personal',
+    url: 'https://rehan.world',
     siteName: 'Rehan Mohammed Portfolio',
     type: 'website',
   },
@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/personal/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={`${inter.className} bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 min-h-screen`}>
         {children}
