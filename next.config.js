@@ -2,7 +2,7 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  basePath: '', // Removed '/personal' for root domain
+  basePath: '/personal', // Back to GitHub Pages subdirectory
   images: {
     unoptimized: true,
   },
