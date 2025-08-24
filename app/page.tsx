@@ -7,8 +7,8 @@ import { useState, useEffect } from 'react'
 
 export default function Home() {
   const [currentlyListening, setCurrentlyListening] = useState({
-    song: "Coffee",
-    artist: "Miguel"
+    song: "---",
+    artist: "---"
   })
 
   useEffect(() => {
@@ -228,7 +228,7 @@ export default function Home() {
               </div>
               <div>
                 <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
-                  Currently Listening To / Recently Listened To
+                  Currently Listening To
                 </h2>
                 <div className="space-y-2 sm:space-y-3">
                   <h3 className="text-xl sm:text-2xl font-semibold text-gray-300">

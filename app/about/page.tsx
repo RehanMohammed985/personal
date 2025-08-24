@@ -9,7 +9,7 @@ export default function About() {
     {
       school: "NC State University",
       degree: "Bachelor of Science in Computer Science",
-      details: "Rising Sophomore • Honors CS Student • Merit School of Engineering Scholar",
+      details: "Rising Sophomore • Honors CS Student",
       year: "2024 - Present",
       icon: GraduationCap
     },
@@ -18,6 +18,13 @@ export default function About() {
       degree: "High School Diploma",
       details: "#1 Public School in USA • Pre-Calculus Teaching Assistant",
       year: "2022 - 2024",
+      icon: GraduationCap
+    },
+    {
+      school: "Cox Mill High School",
+      degree: "High School",
+      details: "Located in Charlotte, North Carolina",
+      year: "2020 - 2022",
       icon: GraduationCap
     }
   ]
@@ -212,7 +219,7 @@ export default function About() {
                 <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-gray-300" />
                 <h2 className="text-xl sm:text-2xl font-bold text-white">Background</h2>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
                 <div>
                   <h3 className="text-base sm:text-lg font-semibold text-gray-300 mb-2">Location</h3>
                   <p className="text-gray-400 text-sm sm:text-base">Charlotte, NC</p>
@@ -224,10 +231,6 @@ export default function About() {
                 <div>
                   <h3 className="text-base sm:text-lg font-semibold text-gray-300 mb-2">Program</h3>
                   <p className="text-gray-400 text-sm sm:text-base">Honors Computer Science</p>
-                </div>
-                <div>
-                  <h3 className="text-base sm:text-lg font-semibold text-gray-300 mb-2">Scholarship</h3>
-                  <p className="text-gray-400 text-sm sm:text-base">Merit School of Engineering Scholar</p>
                 </div>
               </div>
             </motion.div>
