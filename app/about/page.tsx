@@ -15,7 +15,7 @@ export default function About() {
     },
     {
       school: "NCSSM (North Carolina School of Science and Mathematics)",
-      degree: "High School Diploma",
+      degree: "High School",
       details: "#1 Public School in USA • Pre-Calculus Teaching Assistant",
       year: "2022 - 2024",
       icon: GraduationCap
@@ -24,7 +24,7 @@ export default function About() {
       school: "Cox Mill High School",
       degree: "High School",
       details: "Located in Charlotte, North Carolina",
-      year: "2020 - 2022",
+      year: "2020 - 2024",
       icon: GraduationCap
     }
   ]
