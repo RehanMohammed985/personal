@@ -1,34 +1,18 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Twitter, Mail, Moon, Sun } from 'lucide-react'
-import { useState, useEffect } from 'react'
+import { Github, Linkedin, Twitter, Mail, ArrowRight } from 'lucide-react'
+import { useEffect } from 'react'
+import Link from 'next/link'
+import StarfieldBackground from './components/StarfieldBackground'
 
 export default function Home() {
-  const [isDark, setIsDark] = useState(false)
-
   useEffect(() => {
-    // Check for saved theme preference or default to light mode
-    const savedTheme = localStorage.getItem('theme')
-    if (savedTheme === 'dark') {
-      setIsDark(true)
-    }
+    // Force dark mode
+    document.documentElement.classList.add('dark')
+    localStorage.setItem('theme', 'dark')
   }, [])
 
-  useEffect(() => {
-    // Apply theme to document
-    if (isDark) {
-      document.documentElement.classList.add('dark')
-      localStorage.setItem('theme', 'dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-      localStorage.setItem('theme', 'light')
-    }
-  }, [isDark])
-
-  const toggleTheme = () => {
-    setIsDark(!isDark)
-  }
   const socialLinks = [
     { icon: Github, label: 'GitHub', link: 'https://github.com/RehanMohammed985' },
     { icon: Linkedin, label: 'LinkedIn', link: 'https://www.linkedin.com/in/rehan-mohammed-237bab273/' },
@@ -113,34 +97,54 @@ export default function Home() {
     },
   ]
 
+  const blogPosts = [
+    {
+      slug: 'building-multi-agent-systems',
+      title: 'Building Multi-Agent Systems with Graph-Based Protocols',
+      date: 'March 2025',
+      description: 'Exploring how graph theory can enable efficient communication and dynamic role assignment in distributed multi-agent systems. A deep dive into coordination strategies.',
+      tags: ['Multi-Agent Systems', 'Graph Theory', 'Distributed Computing'],
+    },
+    {
+      slug: 'causal-inference-beyond-correlation',
+      title: 'Causal Inference: Beyond Correlation',
+      date: 'February 2025',
+      description: 'Understanding the fundamentals of causal inference and how it differs from traditional correlation-based analysis. Practical applications using DoWhy.',
+      tags: ['Causal Inference', 'Machine Learning', 'Research'],
+    },
+    {
+      slug: 'the-jarvis-hype',
+      title: 'The JARVIS Hype',
+      date: 'April 2025',
+      description: 'Building a local JARVIS-style AI assistant from scratch with real-time voice processing, local LLM orchestration, and macOS automation.',
+      tags: ['AI', 'Local AI', 'macOS', 'Voice Assistant'],
+    },
+  ]
+
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200">
-      {/* Theme Toggle Button */}
-      <button
-        onClick={toggleTheme}
-        className="fixed top-4 right-4 sm:top-6 sm:right-6 z-50 p-3 sm:p-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 active:scale-95 transition-all duration-200 touch-manipulation"
-        aria-label="Toggle theme"
-      >
-        {isDark ? (
-          <Sun className="w-5 h-5 sm:w-5 sm:h-5" />
-        ) : (
-          <Moon className="w-5 h-5 sm:w-5 sm:h-5" />
-        )}
-      </button>
+    <div className="min-h-screen bg-black text-gray-200 relative overflow-hidden">
+      <StarfieldBackground />
       {/* Hero Section */}
-      <section id="hero" className="pt-20 sm:pt-24 pb-6 sm:pb-8 px-4 sm:px-6">
+      <section id="hero" className="pt-20 sm:pt-24 pb-12 sm:pb-16 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-light mb-1 text-gray-900 dark:text-gray-100 tracking-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-light mb-2 text-gray-200 tracking-tight">
               Rehan Mohammed
             </h1>
-            <p className="text-xs sm:text-sm md:text-base text-gray-500 dark:text-gray-400 font-light">
+            <p className="text-xs sm:text-sm md:text-base text-gray-200 font-light mb-8">
               passionate and curious
             </p>
+            <Link
+              href="/blog/the-jarvis-hype"
+              className="inline-flex items-center space-x-2 text-sm text-gray-200 hover:text-gray-200 transition-colors active:scale-95 touch-manipulation"
+            >
+              <span>Read my latest blog</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -155,7 +159,7 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed">
               Computer science student at NC State. Researcher. Builder. I solve high-stakes technical problems and architect solutions that scale. Currently building something innovative
             </p>
           </motion.div>
@@ -171,7 +175,7 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-lg sm:text-xl md:text-2xl font-light mb-8 sm:mb-10 text-gray-900 dark:text-gray-100 tracking-tight">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-light mb-8 sm:mb-10 text-gray-200 tracking-tight">
               Experience
             </h2>
             <div className="space-y-6 sm:space-y-8">
@@ -182,16 +186,16 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.05 }}
-                  className="border-b border-gray-200 dark:border-gray-800 pb-5 sm:pb-6 last:border-0 last:pb-0"
+                  className="border-b border-gray-800 pb-5 sm:pb-6 last:border-0 last:pb-0"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2">
                     <div className="flex-1">
-                      <h3 className="text-sm sm:text-base font-medium text-gray-900 dark:text-gray-100 mb-1">{exp.title}</h3>
-                      <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">{exp.company}</p>
+                      <h3 className="text-sm sm:text-base font-medium text-gray-200 mb-1">{exp.title}</h3>
+                      <p className="text-gray-200 text-xs sm:text-sm">{exp.company}</p>
                     </div>
-                    <span className="text-xs text-gray-500 dark:text-gray-500 mt-1 sm:mt-0 sm:ml-4">{exp.period}</span>
+                    <span className="text-xs text-gray-100 mt-1 sm:mt-0 sm:ml-4">{exp.period}</span>
                   </div>
-                  <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed mt-2">{exp.description}</p>
+                  <p className="text-gray-200 text-xs sm:text-sm leading-relaxed mt-2">{exp.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -208,7 +212,7 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-lg sm:text-xl md:text-2xl font-light mb-8 sm:mb-10 text-gray-900 dark:text-gray-100 tracking-tight">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-light mb-8 sm:mb-10 text-gray-200 tracking-tight">
               Projects
             </h2>
             <div className="space-y-6 sm:space-y-8">
@@ -219,15 +223,15 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.05 }}
-                  className="border-b border-gray-200 dark:border-gray-800 pb-5 sm:pb-6 last:border-0 last:pb-0"
+                  className="border-b border-gray-800 pb-5 sm:pb-6 last:border-0 last:pb-0"
                 >
-                  <h3 className="text-sm sm:text-base font-medium text-gray-900 dark:text-gray-100 mb-2">{project.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed mb-3">{project.description}</p>
+                  <h3 className="text-sm sm:text-base font-medium text-gray-200 mb-2">{project.title}</h3>
+                  <p className="text-gray-200 text-xs sm:text-sm leading-relaxed mb-3">{project.description}</p>
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2 py-0.5 text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded"
+                        className="px-2 py-0.5 text-xs font-medium text-gray-200 bg-gray-800 rounded"
                       >
                         {tag}
                       </span>
@@ -241,11 +245,48 @@ export default function Home() {
                 href="https://github.com/RehanMohammed985"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 active:opacity-70 transition-all inline-flex items-center space-x-1 touch-manipulation"
+                className="text-xs text-gray-200 hover:text-gray-200 active:scale-95 transition-all inline-flex items-center space-x-1 touch-manipulation"
               >
                 <Github className="w-3.5 h-3.5 sm:w-3 sm:h-3" />
                 <span>Find all of this on my GitHub</span>
               </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section id="blog" className="py-12 sm:py-16 px-4 sm:px-6">
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-lg sm:text-xl md:text-2xl font-light mb-12 sm:mb-16 text-gray-200 tracking-tight">
+              Blogs
+            </h2>
+            <div className="space-y-12 sm:space-y-16">
+              {blogPosts.map((post, index) => (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                >
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.05 }}
+                    className="group pb-8 sm:pb-10"
+                  >
+                    <h3 className="text-base sm:text-lg font-medium text-gray-200 group-hover:text-gray-200 transition-colors underline decoration-gray-700 underline-offset-4 group-hover:decoration-gray-500">
+                      {post.title}
+                    </h3>
+                    <p className="text-xs text-gray-100"> {post.date}</p>
+                  </motion.div>
+                </Link>
+              ))}
             </div>
           </motion.div>
         </div>
@@ -263,7 +304,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center space-y-5 sm:space-y-6 mb-6 sm:mb-8">
               <a
                 href="mailto:rehanmoin91@gmail.com"
-                className="inline-flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 active:opacity-70 transition-all touch-manipulation"
+                className="inline-flex items-center space-x-2 text-gray-200 hover:text-gray-200 active:scale-95 transition-all touch-manipulation"
               >
                 <Mail className="w-4 h-4 sm:w-4 sm:h-4" />
                 <span className="text-xs sm:text-sm font-medium break-all">rehanmoin91@gmail.com</span>
@@ -276,7 +317,7 @@ export default function Home() {
                   href={social.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 active:opacity-70 transition-all p-2 touch-manipulation"
+                  className="text-gray-200 hover:text-gray-200 active:scale-95 transition-all p-2 touch-manipulation"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5 sm:w-4 sm:h-4" />
@@ -288,9 +329,9 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-5 sm:py-6 px-4 sm:px-6 border-t border-gray-200 dark:border-gray-800">
+      <footer className="py-5 sm:py-6 px-4 sm:px-6 border-t border-gray-800">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xs text-gray-500 dark:text-gray-500">
+          <p className="text-xs text-gray-200">
             © {new Date().getFullYear()} Rehan Mohammed
           </p>
         </div>
