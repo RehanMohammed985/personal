@@ -21,7 +21,7 @@ export default function Navbar() {
           </Link>
           <div className="flex items-center gap-3 sm:gap-5 lg:gap-8">
             {navItems.map((item) => {
-              const isActive = pathname === item.href
+              const isActive = item.href === '/' ? pathname === '/' : pathname.startsWith(item.href)
               return (
                 <Link key={item.href} href={item.href}>
                   <span className={`text-black text-sm sm:text-base lg:text-lg transition-opacity ${isActive ? 'underline decoration-1 underline-offset-4 decoration-black/50' : 'hover:underline hover:decoration-1 hover:underline-offset-4 hover:decoration-black/30'}`}>
