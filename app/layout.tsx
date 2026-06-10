@@ -14,9 +14,9 @@ export const metadata: Metadata = {
   title: 'Rehan Mohammed',
   description: 'CS @ NC State. AI researcher, builder, and curious mind.',
   icons: {
-    icon: '/images/favicon.png',
-    shortcut: '/images/favicon.png',
-    apple: '/images/favicon.png',
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
   },
 }
 
