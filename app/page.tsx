@@ -35,7 +35,7 @@ export default function Home() {
         <div className="relative flex flex-col lg:flex-row items-center" style={{ minHeight: 'calc(100vh - 3.5rem)' }}>
           <div className="lg:pr-[416px]">
             <p className="text-black text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug mb-4 sm:mb-6">
-              I am Rehan Mohammed, currently majoring in Business and Computer Science at NC State. I solve high-stakes technical problems and build solutions that scale.
+              I am Rehan Mohammed, currently majoring in Business and Computer Science at NC State. I am passionate about AI, machine learning, and how complex systems operate. I love working on innovative projects and contributing to research in artificial intelligence.
             </p>
             <p className="text-black text-lg sm:text-xl lg:text-2xl leading-relaxed mb-6 sm:mb-10">
               I am a firm believer that obsession, when directed with purpose, can turn impossible goals into achievable ones. Great success often starts with an obsession to improve, create, or achieve.
