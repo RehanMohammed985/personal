@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-neutral-100">
       <body className={`${inter.className} bg-neutral-100 text-black min-h-screen antialiased`}>
         <Navbar />
         <main className="pt-14">
