@@ -32,7 +32,7 @@ export default function Home() {
     <>
       <div className="max-w-4xl mx-auto px-6 pb-6" style={{ minHeight: 'calc(100vh - 3.5rem)' }}>
         {/* Hero */}
-        <div className="relative flex items-center" style={{ minHeight: 'calc(100vh - 3.5rem)' }}>
+        <div className="relative flex flex-col lg:flex-row items-center" style={{ minHeight: 'calc(100vh - 3.5rem)' }}>
           <div className="lg:pr-[416px]">
             <p className="text-black text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug mb-4 sm:mb-6">
               I am Rehan Mohammed, currently majoring in Business and Computer Science at NC State. I solve high-stakes technical problems and build solutions that scale.
@@ -52,7 +52,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96">
+          <div className="block lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 w-64 sm:w-80 lg:w-96 h-64 sm:h-80 lg:h-96 mt-8 lg:mt-0 shrink-0">
             <Artwork />
           </div>
         </div>
