@@ -30,7 +30,7 @@ function Artwork() {
 export default function Home() {
   return (
     <>
-      <div className="max-w-4xl mx-auto px-6 pb-6" style={{ minHeight: 'calc(100vh - 3.5rem)' }}>
+      <div className="max-w-4xl mx-auto px-6 pt-20 lg:pt-0 pb-6" style={{ minHeight: 'calc(100vh - 3.5rem)' }}>
         {/* Hero */}
         <div className="relative flex flex-col lg:flex-row items-center" style={{ minHeight: 'calc(100vh - 3.5rem)' }}>
           <div className="lg:pr-[416px]">
