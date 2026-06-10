@@ -1,38 +1,22 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Navbar from './components/Navbar'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
 }
 
 export const metadata: Metadata = {
-  title: 'Rehan Mohammed - AI Researcher & CS Student',
-  description: 'Personal portfolio of Rehan Mohammed, a rising sophomore CS student at NC State University, AI researcher, and tech enthusiast.',
-  keywords: ['AI', 'Machine Learning', 'Computer Science', 'NC State', 'Research', 'Portfolio'],
-  authors: [{ name: 'Rehan Mohammed' }],
-  creator: 'Rehan Mohammed',
+  title: 'Rehan Mohammed',
+  description: 'CS @ NC State. AI researcher, builder, and curious mind.',
   icons: {
     icon: '/images/favicon.png',
     shortcut: '/images/favicon.png',
     apple: '/images/favicon.png',
-  },
-  openGraph: {
-    title: 'Rehan Mohammed - AI Researcher & CS Student',
-    description: 'Personal portfolio of Rehan Mohammed, a rising sophomore CS student at NC State University, AI researcher, and tech enthusiast.',
-    url: 'https://rehan.world',
-    siteName: 'Rehan Mohammed Portfolio',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Rehan Mohammed - AI Researcher & CS Student',
-    description: 'Personal portfolio of Rehan Mohammed, a rising sophomore CS student at NC State University, AI researcher, and tech enthusiast.',
-    creator: '@rehan_m0',
   },
 }
 
@@ -43,12 +27,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-      </head>
-      <body className={`${inter.className} bg-gray-50 dark:bg-gray-900 min-h-screen transition-colors duration-200`}>
-        {children}
+      <body className={`${inter.className} bg-neutral-400 text-black min-h-screen antialiased`}>
+        <Navbar />
+        <main className="pt-14">
+          {children}
+        </main>
       </body>
     </html>
   )
-} 
+}
