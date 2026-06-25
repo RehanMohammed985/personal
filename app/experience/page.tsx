@@ -4,6 +4,12 @@ import Link from 'next/link'
 
 const experiences = [
   {
+    title: 'AI Eval Engineer',
+    org: 'Boardy',
+    period: 'June 2026 \u2013 Present',
+    desc: 'Designing and building eval training pipelines and agent behavior scoring rubrics for a production multi-agent AI platform. Focused on goal drift detection and failure mode classification. Contributing as a volunteer.',
+  },
+  {
     title: 'AI-Human Simulation Researcher',
     org: 'ARNAV Lab @ NC State Department of CSC',
     period: 'Spring 2025 \u2013 Present',
@@ -12,8 +18,8 @@ const experiences = [
   {
     title: 'Fellow',
     org: 'Telora',
-    period: '2025 \u2013 Present',
-    desc: 'Acquired funding and working on a startup in the edtech space. Building innovative solutions to transform educational technology and learning experiences.',
+    period: 'December 2025 \u2013 February 2026',
+    desc: 'Backed by non-dilutive capital and working on a startup in the edtech space. Building innovative solutions to transform educational technology and learning experiences.',
   },
   {
     title: 'AI Researcher',
